@@ -368,7 +368,7 @@ namespace drantiss {
         for (size_t j = 1; j <= n; ++j)
             swap(data[index(r1, j)], data[index(r2, j)]);
     }
-    void lstd::Matrix::swapCols(size_t c1, size_t c2) {
+    void Matrix::swapCols(size_t c1, size_t c2) {
         if (c1 > n || c2 > n || c1 == 0 || c2 == 0) {
             std::cerr << "Error: swapCols index " << c1 << " or " << c2 << " out of range [1, "
                 << n << "].\n";
@@ -377,7 +377,7 @@ namespace drantiss {
         for (size_t j = 1; j <= m; ++j)
             swap(data[index(j, c1)], data[index(j, c2)]);
     }
-    void lstd::Matrix::multiplyRow(size_t r, double k) {
+    void Matrix::multiplyRow(size_t r, double k) {
         if (r > m || r == 0) {
             std::cerr << "Error: multiplyRow index " << r << " out of range [1, "
                 << m << "].\n";
@@ -386,7 +386,7 @@ namespace drantiss {
         for (size_t j = 1; j <= n; ++j)
             data[index(r, j)] *= k;
     }
-    void lstd::Matrix::multiplyCol(size_t c, double k) {
+    void Matrix::multiplyCol(size_t c, double k) {
         if (c > m || c == 0) {
             std::cerr << "Error: multiplyCow index " << c << " out of range [1, "
                 << m << "].\n";
@@ -395,7 +395,7 @@ namespace drantiss {
         for (size_t j = 1; j <= m; ++j)
             data[index(j, c)] *= k;
     }
-    void lstd::Matrix::addRowMultiple(size_t r, size_t s, double k) {
+    void Matrix::addRowMultiple(size_t r, size_t s, double k) {
         if (r > m || s > m || r == 0 || s == 0) {
             std::cerr << "Error: addRowMultiple index " << r << " or " << s << " out of range [1, "
                 << m << "].\n";
@@ -404,7 +404,7 @@ namespace drantiss {
         for (size_t j = 1; j <= n; ++j)
             data[index(r, j)] += k * data[index(s, j)];
     }
-    void lstd::Matrix::addColMultiple(size_t c, size_t d, double k) {
+    void Matrix::addColMultiple(size_t c, size_t d, double k) {
         if (c > m || d > m || c == 0 || d == 0) {
             std::cerr << "Error: addColMultiple index " << c << " or " << d << " out of range [1, "
                 << n << "].\n";
@@ -413,4 +413,5 @@ namespace drantiss {
         for (size_t j = 1; j <= n; ++j)
             data[index(j, c)] += k * data[index(j, d)];
     }
+
 }
